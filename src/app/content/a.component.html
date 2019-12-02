@@ -1,0 +1,33 @@
+<div class="container custom-container-2">
+
+  <!-- Show it when there is no videos -->
+  <div class="no-data text-center" *ngIf="Videos.length == 0">
+    <p>There is no videos added yet!</p>
+  </div>
+
+  <!-- Videos list table, it hides when there is no employee -->
+  <div *ngIf="Videos.length !== 0">
+    <h3 class="mb-3 text-center">Videos List</h3>
+
+    <div class="col-md-12">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Video Title</th>
+            <th scope="col">User Name</th>
+            <th scope="col">Viewed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let video of Videos.data">
+            <td>{{video.video_title}}</td>
+            <td>{{video.user_name}}</td>
+            <td>{{video.video_views}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+</div>
