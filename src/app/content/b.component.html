@@ -24,19 +24,21 @@
         <h1>Channels</h1>
         <div class="more"><a href="#" title="Browse all channels">Browse all channels</a></div>
         <ul class="widget-channels">
-            <li class="row" *ngFor="let channel of Channels; index as i;">
-                <a href="#" title="{{channel.channel_name}}-{{i}}" *ngIf="i%2 === 1">
-                    <div class="col-sm-6 col-xs-6">
-                        <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
-                        <div class="caption" title="{{channel.channel_name}}">{{channel.channel_name}}</div>
-                    </div>
-                </a>
-                <a href="#" title="{{channel.channel_name}}" *ngIf="i%2 === 0">
-                    <div class="col-sm-6 col-xs-6">
-                        <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
-                        <div class="caption" title="{{channel.channel_name}}">{{channel.channel_name}}</div>
-                    </div>
-                </a>
+            <li class="row" *ngFor="let channel of Channels; let i = index; let even = even; trackBy: trackByFn">
+                <span *ngIf="even">
+                    <a href="#" title="{{Channels[i].channel_name}}">
+                        <div class="col-sm-6 col-xs-6">
+                            <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
+                            <div class="caption" title="{{Channels[i].channel_name}}">{{Channels[i].channel_name}}</div>
+                        </div>
+                    </a>
+                    <a href="#" title="{{Channels[i+1].channel_name}}">
+                        <div class="col-sm-6 col-xs-6">
+                            <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
+                            <div class="caption" title="{{Channels[i+1].channel_name}}">{{Channels[i+1].channel_name}}</div>
+                        </div>
+                    </a>
+                </span>
             </li>
         </ul>
     </div>
