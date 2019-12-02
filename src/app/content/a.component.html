@@ -1,33 +1,193 @@
-<div class="container custom-container-2">
-
-  <!-- Show it when there is no videos -->
-  <div class="no-data text-center" *ngIf="Videos.length == 0">
-    <p>There is no videos added yet!</p>
+<div class="col-sm-8">
+  <div class="list-content">
+    <h1>Videos</h1>
+    <ul>
+      <li class="row">
+        <div class="col-sm-12" *ngIf="Videos">
+          <div class="row">
+            <span *ngFor="let video of Videos; trackBy: trackByFn">
+              <div class="col-sm-8" *ngIf="video.video_is_headline == 1">
+                <div class="more"><a href="#" title="Browse all videos">Browse all videos</a></div>
+                <div class="wrap">
+                  <a href="#" title="{{video.video_title}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                    <h2>{{video.video_title}}</h2>
+                  </a>
+                  <div class="author"><a href="#" title="Author by: {{video.user_name}}">{{video.user_name}}</a></div>
+                  <div class="views">{{video.video_views}} views</div>
+                </div>
+              </div>
+            </span>
+            <span *ngFor="let video of Videos; index as i; trackBy: trackByFn">
+              <div class="col-sm-4" *ngIf="video.video_is_headline != 1 && i < 3">
+                <div class="wrap">
+                  <a href="#" title="{{video.video_title}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                  </a>
+                  <div class="author"><a href="#" title="Author by: {{video.user_name}}">{{video.video_title}}</a></div>
+                  <div class="views">{{video.video_views}} views</div>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="row">
+            <span *ngFor="let video of Videos; index as i; trackBy: trackByFn">
+              <div class="col-sm-4" *ngIf="video.video_is_headline != 1 && i > 2">
+                <div class="wrap">
+                  <a href="#" title="{{video.video_title}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                  </a>
+                  <div class="author"><a href="#" title="Author by: {{video.user_name}}">{{video.video_title}}</a></div>
+                  <div class="views">{{video.video_views}} views</div>
+                </div>
+              </div>
+            </span>
+            <div class="col-sm-4">
+              <div class="wrap">
+                <a href="#" title="Lorem ipsum sit dollor amet 5" class="title">
+                  <img src="https://via.placeholder.com/600x400/953e46/953e46/img.jpg" class="border img-responsive">
+                </a>
+                <div class="upload-content">
+                  <a href="#" title="Upload Your Own Video">
+                    <i class="fas fa-plus"></i> 
+                    <span>Upload Your Own Video</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+  
+  <div class="list-content">
+    <h1>People</h1>
+    <ul>
+      <li class="row">
+        <div class="col-sm-12" *ngIf="Peoples">
+          <div class="row">
+            <span *ngFor="let people of Peoples; index as i; trackBy: trackByFn">
+              <div class="col-sm-8" *ngIf="i == 0">
+                <div class="more"><a href="#" title="View all">View all</a></div>
+                <div class="wrap">
+                  <a href="#" title="User interface designer" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                    <h2>{{people.user_name}}</h2>
+                  </a>
+                  <div class="author"><a href="#" title="User interface designer">User interface designer</a></div>
+                  <div class="views">187887 views</div>
+                </div>
+              </div>
+            </span>
+            <span *ngFor="let people of Peoples; index as i; trackBy: trackByFn">
+              <div class="col-sm-4" *ngIf="i > 0 && i < 3">
+                <div class="wrap">
+                  <a href="#" title="Lorem ipsum sit dollor amet {{i}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                  </a>
+                  <div class="author"><a href="#" title="Author by: {{people.user_name}}">{{people.user_name}}</a></div>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="row">
+            <span *ngFor="let people of Peoples; index as i; trackBy: trackByFn">
+              <div class="col-sm-4" *ngIf="i > 2">
+                <div class="wrap">
+                  <a href="#" title="Lorem ipsum sit dollor amet {{i}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                  </a>
+                  <div class="author"><a href="#" title="Author by: {{people.user_name}}">{{people.user_name}}</a></div>
+                </div>
+              </div>
+            </span>
+            <div class="col-sm-4">
+              <div class="wrap">
+                <a href="#" title="Lorem ipsum sit dollor amet 5" class="title">
+                  <img src="https://via.placeholder.com/600x400/953e46/953e46/img.jpg" class="border img-responsive">
+                </a>
+                <div class="upload-content">
+                  <a href="#" title="Upload Your Own Video">
+                    <i class="fas fa-plus"></i> 
+                    <span>Upload Your Own Video</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 
-  <!-- Videos list table, it hides when there is no employee -->
-  <div *ngIf="Videos.length !== 0">
-    <h3 class="mb-3 text-center">Videos List</h3>
-
-    <div class="col-md-12">
-      <table class="table table-bordered">
-        <thead>
-          <tr>
-            <th scope="col">Video Title</th>
-            <th scope="col">User Name</th>
-            <th scope="col">Viewed</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let video of Videos.data">
-            <td>{{video.video_title}}</td>
-            <td>{{video.user_name}}</td>
-            <td>{{video.video_views}}</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
+  <div class="list-content">
+    <h1>Documents</h1>
+    <ul>
+      <li class="row">
+        <div class="col-sm-12">
+          <div class="row">
+            <span *ngFor="let document of Documents; index as i; trackBy: trackByFn">
+              <div class="col-sm-8" *ngIf="document.document_is_headline == 1">
+                <div class="more"><a href="#" title="Browse all documents">Browse all documents</a></div>
+                <div class="wrap">
+                  <a href="#" title="{{document.document_title}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                    <h2>{{document.document_title}}</h2>
+                  </a>
+                  <div class="author"><a href="#" title="Author by: {{document.user_name}}">{{document.user_name}}</a></div>
+                  <div class="views">{{document.document_views}} views</div>
+                </div>
+              </div>
+            </span>
+            <span *ngFor="let document of Documents; index as i; trackBy: trackByFn">
+              <div class="col-sm-4" *ngIf="document.document_is_headline != 1 && i < 3">
+                <div class="wrap">
+                  <a href="#" title="{{document.document_title}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="top img-responsive">
+                    <h2 class="small">{{document.document_title}}</h2>
+                  </a>
+                  <div class="views">{{document.document_views}} views</div>
+                </div>
+              </div>
+            </span>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <div class="row">
+            <span *ngFor="let document of Documents; index as i; trackBy: trackByFn">
+              <div class="col-sm-4" *ngIf="document.document_is_headline != 1 && i > 2">
+                <div class="wrap">
+                  <a href="#" title="{{document.document_title}}" class="title">
+                    <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
+                  </a>
+                  <div class="author"><a href="#" title="Author by: {{document.user_name}}">{{document.user_name}}</a></div>
+                  <div class="views">{{document.document_views}} views</div>
+                </div>
+              </div>
+            </span>
+            <div class="col-sm-4">
+              <div class="wrap">
+                <a href="#" title="Lorem ipsum sit dollor amet 5" class="title">
+                  <img src="https://via.placeholder.com/600x400/953e46/953e46/img.jpg" class="border img-responsive">
+                </a>
+                <div class="upload-content">
+                  <a href="#" title="Share Your Document">
+                    <i class="fas fa-plus"></i> 
+                    <span>Share Your Document</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
   </div>
 
 </div>
+<b-comp></b-comp>

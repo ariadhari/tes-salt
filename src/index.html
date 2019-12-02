@@ -1,84 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   	<meta charset="utf-8">
-  	<title>TesSalt</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="Keyword here...">
+    <meta name="description" content="Description here...">
+    <meta name="author" content="Hari">
+  	<title>Tes Salt - Angular</title>
   	<base href="/">
 
-  	<meta name="viewport" content="width=device-width, initial-scale=1">
   	<link rel="icon" type="image/x-icon" href="favicon.ico">
+  	<!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
 
-  	<style>
-	    body {
-	      width: 500px;
-	      min-height: 500px;
-	      margin: 0 auto;
-	      border: 3px solid rgba(195, 8, 3, 1);
-	      position: relative;
-	    }
-
-	    header {
-	      background-color: rgba(195, 8, 3, 1);
-	      padding: 5px;
-	    }
-
-	    header img {
-	      display: block;
-	      margin: 0 auto;
-	      width: 200px;
-	      height: 150px;
-	    }
-
-	    header div {
-	      text-align: center;
-	      color: white;
-	      font-size: 18px;
-	      margin: 5px 0;
-	    }
-
-	    section {
-	      padding: 10px;
-	    }
-
-	    footer {
-	      background-color: rgba(195, 8, 3, 1);
-	      height: 25px;
-	      width: 100%;
-	      padding: 12px 0;
-	      position: absolute;
-	      bottom: 0;
-	    }
-
-	    footer img {
-	      height: 25px;
-	      position: absolute;
-	      top: 15px;
-	      left: 160px;
-	    }
-
-	    footer div {
-	      color: white;
-	      position: absolute;
-	      top: 16px;
-	      left: 200px;
-	      font-size: 18px;
-	    }
-	</style>
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 <body>
 	<header>
-  		<!-- <a href="https://blog.angularindepth.com" target="_blank"> -->
-		<img src="assets/images/salt-logo-min.png">
-  		<!-- </a> -->
+  		<!-- Navbar & Header -->
+		<div class="navbar navbar-default">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#menu" aria-expanded="false">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <div class="navbar-custom">
+		                <div class="row">
+		                    <div class="col-lg-3">
+		                        <a class="navbar-brand" title="Social Network" href="#">Social<span>Network</span></a>
+		                    </div>
+		                    <div class="col-lg-5">
+		                        <form class="search">
+		                            <input type="text" class="form-control" placeholder="Find...">
+		                            <i class="fas fa-search"></i>
+		                        </form>
+		                    </div>
+		                    <div class="col-lg-4">
+		                        <div class="user-login">
+		                            <button class="btn btn-upload"><i class="fas fa-arrow-up" title="Upload"></i> Upload</button>
+		                            <div class="username">
+		                                <i class="fas fa-user"></i>
+		                                <div class="first-name"> 
+		                                    Waseem <span class="last-name">Arshad</span> <span class="badge">13</span>
+		                                </div>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		        <div class="navbar-collapse collapse" id="menu">
+		            <ul class="nav navbar-nav">
+		                <li><a href="#" title="Videos">Videos</a></li>
+		                <li><a href="#" title="People">People</a></li>
+		                <li><a href="#" title="Documents">Documents</a></li>
+		                <li><a href="#" title="Events">Events</a></li>
+		                <li><a href="#" title="Communities">Communities</a></li>
+		                <li><a href="#" title="Favorities">Favorities</a></li>
+		                <li><a href="#" title="Channels">Channels</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
 	</header>
 	<section>
-  		<app-root></app-root>
+		<div class="container">
+		    <div class="wrapper-content">
+		        <div class="row">
+			  		<app-root></app-root>
+			  	</div>
+			</div>
+		</div>
 	</section>
 	<footer>
-	  <!-- <a href="https://www.linkedin.com/in/muhamad-adhaari-5319aa94/" target="_blank"> -->
-	    <!-- <img src="assets/twitter.png"> -->
-	    <div>Muhamad Adhaari</div>
-	  <!-- </a> -->
+	    <div class="container">
+	        <div class="wrap">
+	            <ul class="socmed">
+	                <li><a href="#" title="Twitter"><i class="fab fa-twitter"></i></a></li>
+	                <li><a href="#" title="Linkedin"><i class="fab fa-linkedin-in"></i></a></li>
+	                <li><a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+	            </ul>
+	            <ul class="footer-menu">
+	                <li><a href="#" title="About">About</a></li>
+	                <li><a href="#" title="For Bussines">For Bussines</a></li>
+	                <li><a href="#" title="Suggestions">Suggestions</a></li>
+	                <li><a href="#" title="Help & FAQs">Help & FAQs</a></li>
+	                <li><a href="#" title="Contacts">Contacts</a></li>
+	                <li><a href="#" title="Pricing">Pricing</a></li>
+	            </ul>
+	            <div class="copyright">
+	                © Copyright 2013 companyname inc.
+	            </div>
+	            <ul class="footer-menu no-mt">
+	                <li><a href="#" title="Privacy">Privacy</a></li>
+	                <li><a href="#" title="Terms">Terms</a></li>
+	            </ul>
+	        </div>
+	    </div>
 	</footer>
 </body>
 </html>

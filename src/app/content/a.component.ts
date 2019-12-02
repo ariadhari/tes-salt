@@ -28,19 +28,49 @@ import { ApiService } from "../service/api.service";
 
 export class AComponent implements OnInit {
 
-	Videos: any = [];
+  Videos: any = [];
+  Peoples: any = [];
+	Documents: any = [];
 
 	constructor(
     public api: ApiService
 	) { }
 
 	ngOnInit() {
- 		this.loadVideos()
+    this.loadVideos();
+    this.loadPeoples();
+ 		this.loadDocuments();
 	}
 
 	// Get videos list
 	loadVideos() {
-  	return this.api.getVideos().subscribe(data => this.Videos = data);
+  	return this.api.getVideos().subscribe(( data : any ) => {
+      this.Videos = data.data;
+
+      console.log(this.Videos);
+    });
+  }
+
+  // Get Peoples list
+  loadPeoples() {
+    return this.api.getPeoples().subscribe(( data : any ) => {
+      this.Peoples = data.data;
+
+      console.log(this.Peoples);
+    });
+  }
+
+  // Get Peoples list
+  loadDocuments() {
+    return this.api.getDocuments().subscribe(( data : any ) => {
+      this.Documents = data.data;
+
+      console.log(this.Documents);
+    });
+  }
+
+  trackByFn(index, item) {    
+    return item.id; // unique id corresponding to the item
   }
 
 }

@@ -1,0 +1,43 @@
+<div class="col-sm-4">
+    <div class="widget">
+        <h1>Activity</h1>
+        <div class="more"><a href="#" title="View timeline / Flater Activities">View timeline / Flater Activities</a></div>
+        <span *ngIf="Activities">
+            <ul class="widget-activity">
+                <li class="row" *ngFor="let activity of Activities; trackBy: trackByFn">
+                    <a href="#" title="{{activity.activity_content}}">
+                        <div class="col-sm-4 col-xs-4 no-pl">
+                            <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
+                        </div>
+                        <div class="col-sm-8 col-xs-8 no-padding">
+                            <span class="author">{{activity.user_name}} </span> 
+                            <span class="activity">{{activity.activity_name}}</span>
+                            <div class="activity-summary">{{activity.activity_content}}</div>
+                            <div class="activity-log"><i class="fas fa-comment"></i> {{activity.activity_time}}</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </span>
+    </div>
+    <div class="widget">
+        <h1>Channels</h1>
+        <div class="more"><a href="#" title="Browse all channels">Browse all channels</a></div>
+        <ul class="widget-channels">
+            <li class="row" *ngFor="let channel of Channels; index as i;">
+                <a href="#" title="{{channel.channel_name}}-{{i}}" *ngIf="i%2 === 1">
+                    <div class="col-sm-6 col-xs-6">
+                        <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
+                        <div class="caption" title="{{channel.channel_name}}">{{channel.channel_name}}</div>
+                    </div>
+                </a>
+                <a href="#" title="{{channel.channel_name}}" *ngIf="i%2 === 0">
+                    <div class="col-sm-6 col-xs-6">
+                        <img src="https://via.placeholder.com/600x400/f4e3cf/f4e3cf/img.jpg" class="img-responsive">
+                        <div class="caption" title="{{channel.channel_name}}">{{channel.channel_name}}</div>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

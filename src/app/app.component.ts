@@ -14,7 +14,7 @@ export class AppComponent implements AfterViewChecked {
   }
 
   ngAfterViewChecked() {
-    console.log('number of child components: ' + this.childComps.length);
+    // console.log('number of child components: ' + this.childComps.length);
   }
 
   remove() {

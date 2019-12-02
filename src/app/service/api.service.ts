@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Video } from '../shared/video';
+import { User } from '../shared/user';
+import { Document } from '../shared/document';
+import { Activity } from '../shared/activity';
+import { Channel } from '../shared/channel';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
@@ -15,6 +19,10 @@ export class ApiService {
     
     /*---------------------------------- Activities User URL API Service ------------------------- */
     getActivitiesURL: string = this.urlAPI + 'activities';
+    /* ----------------------------------------------------------------------------------------- */
+
+    /*---------------------------------- Users URL API Service ------------------------- */
+    getUsersURL: string = this.urlAPI + 'users';
     /* ----------------------------------------------------------------------------------------- */
 
     /*---------------------------------- Videos URL API Service ------------------------- */
@@ -40,6 +48,38 @@ export class ApiService {
 
     getVideos(): Observable<Video> {
         return this.http.get<Video>(this.getVideosURL)
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        )
+    }
+
+    getPeoples(): Observable<User> {
+        return this.http.get<User>(this.getUsersURL)
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        )
+    }
+
+    getDocuments(): Observable<Document> {
+        return this.http.get<Document>(this.getDocumentsURL)
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        )
+    }
+
+    getActivities(): Observable<Activity> {
+        return this.http.get<Activity>(this.getActivitiesURL)
+        .pipe(
+            retry(1),
+            catchError(this.handleError)
+        )
+    }
+
+    getChannels(): Observable<Channel> {
+        return this.http.get<Channel>(this.getChannelsURL)
         .pipe(
             retry(1),
             catchError(this.handleError)

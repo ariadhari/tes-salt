@@ -1,0 +1,108 @@
+/*
+Name : responsive.css
+Type : Default Style
+*/
+
+@media (min-width: 991px) {
+	.desktop-hide {
+		display: none !important;
+	}
+}
+@media (min-width: 768px) and (max-width: 990px) {
+	.tablet-hide {
+		display: none !important;
+	}
+}
+@media (max-width: 767px) {
+	.mobile-hide {
+		display: none !important;
+	}
+}
+
+
+
+
+@media only screen and (max-width : 992px) {
+
+	/*container*/
+	.container {
+		width: inherit;
+		margin: 0 auto;
+	}
+	.container > .navbar-header {
+		padding: 0;
+		margin: 0;
+		margin-bottom: 15px;
+	}
+	/* navbar */
+	.navbar-nav {
+		border-top: none;
+		margin: 0;
+	}
+	.navbar-toggle {
+		margin-right: 0;
+	}
+	.navbar-default .navbar-brand,
+	.navbar-default .navbar-brand:hover {
+		padding: 15px 0 !important;
+	}
+	.navbar-custom form.search > i {
+		top: 50px;
+	}
+	.navbar-default .navbar-nav {
+		padding: 0 15px;
+	}
+	.navbar-default .navbar-nav > li > a {
+		margin: 10px 0;	
+	}
+	/*.navbar-default .navbar-nav > li:first-child > a {
+		margin-left: 15px;
+	}*/
+	.navbar-default .navbar-nav > li:last-child > a {
+		margin-right: 15px;
+	}
+	.navbar-default .navbar-nav > li::before {
+		content: '';
+	}
+
+	/*list content*/
+	.list-content > ul > li .col-sm-8,
+	.list-content > ul > li .col-sm-6,
+	.list-content > ul > li .col-sm-4 {
+		padding-right: 15px;
+	}
+	.list-content > ul > li .wrap .upload-content > a {
+		padding: 27% 37%;
+	}
+	.list-content .more {
+		right: 15px;
+	}
+
+
+}
+
+@media only screen and (max-width : 640px) {
+
+	/*navbar*/
+	
+
+	/*list content*/
+	.list-content > ul > li .wrap .upload-content > a {
+		padding: 26%;
+	}
+
+	/*footer*/
+	footer .left, footer .right {
+		text-align: center;
+	}
+	footer .right {
+		padding: 0 15px 15px 15px;
+	}
+	footer .text-right {
+		text-align: center;
+	}
+	footer .t-20 {
+		top: inherit !important;
+	}
+
+}
